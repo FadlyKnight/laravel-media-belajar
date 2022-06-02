@@ -13,10 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home.beranda');
-});
+Route::get('/', 'BerandaController@beranda')->name('home.beranda');
+Route::get('/materi', 'BerandaController@materi')->name('home.materi');
+Route::get('/soal', 'BerandaController@soal')->name('home.soal');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// admin & guru
+Route::group([ 'prefix' => 'manage','as' => 'manage.'], function(){
+    Route::resource('user','UserController');
+    Route::resource('soal','SoalController');
+    Route::resource('nilai','NilaiController');
+    Route::resource('jawaban','JawabanController');
+    Route::resource('kategori','KategoriController');
+    Route::resource('materi','MateriController');
+});

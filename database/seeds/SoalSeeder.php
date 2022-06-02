@@ -1,5 +1,6 @@
 <?php
 
+use App\Soal;
 use Illuminate\Database\Seeder;
 
 class SoalSeeder extends Seeder
@@ -11,6 +12,6 @@ class SoalSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Soal::class, 10)->create();
     }
 }

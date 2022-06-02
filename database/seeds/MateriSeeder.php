@@ -1,5 +1,6 @@
 <?php
 
+use App\Materi;
 use Illuminate\Database\Seeder;
 
 class MateriSeeder extends Seeder
@@ -11,6 +12,7 @@ class MateriSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // Materi::factory()->count(10)->create();
+        factory(Materi::class, 10)->create();
     }
 }

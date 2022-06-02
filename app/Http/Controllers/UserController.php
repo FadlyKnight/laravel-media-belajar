@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Kategori;
+use App\User;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Kategori $kategori)
+    public function index(User $user)
     {
-        $head = $kategori->display_all;
-        $data = $kategori->select($head)->get();
+        $head = $user->display_all;
+        $data = $user->select($head)->get();
         $response = [
             'head' => $head,
             'data' => $data,
         ];
-        return view('backend.kategori.index', $response);
+        return view('backend.user.index', $response);
     }
 
     /**
@@ -47,10 +47,10 @@ class KategoriController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Kategori  $kategori
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategori $kategori)
+    public function show($id)
     {
         //
     }
@@ -58,10 +58,10 @@ class KategoriController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Kategori  $kategori
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit($id)
     {
         //
     }
@@ -70,10 +70,10 @@ class KategoriController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Kategori  $kategori
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -81,10 +81,10 @@ class KategoriController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Kategori  $kategori
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy($id)
     {
         //
     }

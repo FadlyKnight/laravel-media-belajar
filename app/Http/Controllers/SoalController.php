@@ -12,9 +12,15 @@ class SoalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Soal $soal)
     {
-        //
+        $head = $soal->display_all;
+        $data = $soal->select($head)->get();
+        $response = [
+            'head' => $head,
+            'data' => $data,
+        ];
+        return view('backend.soal.index', $response);
     }
 
     /**

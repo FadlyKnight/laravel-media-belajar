@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                Copyright &copy {{date('Y')}} Figure Factories | All Right Reserved
+                Copyright &copy {{date('Y')}} Vira Media Belajar | All Right Reserved
             </div>
         </div>
     </div>

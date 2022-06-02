@@ -17,10 +17,10 @@ class CreateMaterisTable extends Migration
             $table->id();
             $table->integer('guru_id');
             $table->integer('kategori_id');
+            $table->string('gambar')->nullable();
             $table->string('slug');
             $table->string('judul');
             $table->text('konten');
-            $table->string('gambar');
             $table->timestamps();
         });
     }

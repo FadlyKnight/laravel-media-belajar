@@ -12,9 +12,15 @@ class MateriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Materi $materi)
     {
-        //
+        $head = $materi->display_all;
+        $data = $materi->select($head)->get();
+        $response = [
+            'head' => $head,
+            'data' => $data,
+        ];
+        return view('backend.materi.index', $response);
     }
 
     /**

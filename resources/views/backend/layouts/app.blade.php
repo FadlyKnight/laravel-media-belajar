@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>{{ $metatitle ?? 'Figure Factory | Dashboard' }}</title>
+        <title>{{ isset($metatitle) && $metatitle != '' ? $metatitle.' | ' : '' }} Vira Media Belajar</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="{{ $metadesc ?? "dashboard admin" }}" name="description" />
-        <meta content="Figure Factory" name="author" />
+        <meta content="Vira Media Belajar" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('logo-light.png')}}">
@@ -92,8 +92,8 @@
         <script src="{{url('dashboard/assets/libs/datatables/buttons.print.min.js')}}"></script>
         <script src="{{url('dashboard/assets/libs/datatables/dataTables.keyTable.min.js')}}"></script>
         <script src="{{url('dashboard/assets/libs/datatables/dataTables.select.min.js')}}"></script>
-        <script src="{{url('dashboard/assets/libs/pdfmake/pdfmake.min.js')}}"></script>
-        <script src="{{url('dashboard/assets/libs/pdfmake/vfs_fonts.js')}}"></script>
+        {{-- <script src="{{url('dashboard/assets/libs/pdfmake/pdfmake.min.js')}}"></script>
+        <script src="{{url('dashboard/assets/libs/pdfmake/vfs_fonts.js')}}"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         
         @yield('js')
