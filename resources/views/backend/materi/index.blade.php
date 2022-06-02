@@ -12,8 +12,11 @@
         <li class="breadcrumb-item active">Materi</li>
     </ol>
     @endslot
-
-    <a href="#" class="btn btn-primary">Create</a>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <a href="{{ route('manage.materi.create') }}" class="btn btn-primary">Tambah</a>
+        </div>
+    </div>
     <div style="height: 20px;"></div>
     <table id="datatable" class="table table-bordered ">
         <thead>
@@ -22,6 +25,7 @@
             @foreach ($head as $th)
             <th>{{ Str::ucfirst(str_replace('_id','',$th)) }}</th>
             @endforeach
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -38,11 +42,29 @@
                             <td>{{ $d->$th }}</td>
                         @endif
                     @endforeach
+                    <td>
+                        <a 
+                            class="btn btn-warning"
+                            href="{{ route('manage.materi.edit', $d->id) }}">
+                            <i class="fa fa-pencil-alt" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn-danger removeBtn"
+                            href="javascript:void(0)"
+                            data-url="{{ route('manage.materi.destroy', $d->id) }}"
+                            >
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 </x-card>
+
+<form action="" id="removeBtnForm" method="post">
+    @csrf
+    @method('delete')
+</form>
 
 @endsection
 
@@ -64,6 +86,12 @@
     <script src="{{ asset('dashboard/assets/libs/datatables/buttons.bootstrap4.min.js') }}"></script>
 
     <script>
+        $('.removeBtn').on('click', function(){
+            let form = $('#removeBtnForm');
+            let action = $(this).data('url');
+            form.attr('action', action);
+            form.submit();
+        });
         $("#datatable").DataTable();
     </script>
 @endsection

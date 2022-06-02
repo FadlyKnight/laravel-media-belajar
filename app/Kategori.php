@@ -15,7 +15,7 @@ class Kategori extends Model
         'slug',
     ];
 
-    public $display_all = ['nama','parent_id','slug'];
+    public $display_all = ['id','nama','parent_id','slug'];
 
     public function parent(){
         return $this->belongsTo(Kategori::class,'parent_id','id')->withDefault(['nama' => 'Tidak Ada']);

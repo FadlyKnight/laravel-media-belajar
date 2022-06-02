@@ -16,7 +16,7 @@ class Materi extends Model
         'gambar',
     ];
 
-    public $display_all = ['guru_id','kategori_id','slug','judul'];
+    public $display_all = ['id','guru_id','kategori_id','judul'];
     
     public function guru(){
         return $this->belongsTo(User::class,'guru_id','id')->withDefault();

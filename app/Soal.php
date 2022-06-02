@@ -61,7 +61,7 @@ class Soal extends Model
     //     ],
     // ];
     
-    public $display_all = ['guru_id','pertanyaan','kunci'];
+    public $display_all = ['id','guru_id','pertanyaan','kunci'];
 
     public function guru(){
         return $this->belongsTo(User::class,'guru_id','id')->withDefault();

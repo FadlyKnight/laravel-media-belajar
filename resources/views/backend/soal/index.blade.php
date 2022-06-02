@@ -13,7 +13,7 @@
     </ol>
     @endslot
 
-    <a href="#" class="btn btn-primary">Create</a>
+    <a href="#" class="btn btn-primary">Tambah</a>
     <div style="height: 20px;"></div>
     <table id="datatable" class="table table-bordered ">
         <thead>

@@ -13,7 +13,7 @@ class Nilai extends Model
         'total_nilai',
     ];
 
-    protected $display_all = ['siswa_id','total_nilai'];
+    protected $display_all = ['id','siswa_id','total_nilai'];
     
     public function siswa(){
         return $this->belongsTo(User::class,'siswa_id','id')->withDefault();

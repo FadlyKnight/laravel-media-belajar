@@ -38,7 +38,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public $display_all = ['name', 'email','role'];
+    public $display_all = ['id','name', 'email','role'];
 
     public function soal(){
         return $this->hasMany(Soal::class,'soal_id','id');
