@@ -16,6 +16,7 @@ class UserController extends Controller
     {
         $head = $user->display_all;
         $data = $user->select($head)->get();
+        unset($head[0]);
         $response = [
             'head' => $head,
             'data' => $data,

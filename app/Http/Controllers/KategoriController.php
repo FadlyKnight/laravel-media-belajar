@@ -16,6 +16,7 @@ class KategoriController extends Controller
     {
         $head = $kategori->display_all;
         $data = $kategori->select($head)->get();
+        unset($head[0]);
         $response = [
             'head' => $head,
             'data' => $data,

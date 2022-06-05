@@ -16,6 +16,7 @@ class SoalController extends Controller
     {
         $head = $soal->display_all;
         $data = $soal->select($head)->get();
+        unset($head[0]);
         $response = [
             'head' => $head,
             'data' => $data,
