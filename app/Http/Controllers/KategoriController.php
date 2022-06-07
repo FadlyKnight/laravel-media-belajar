@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class KategoriController extends Controller
 {
@@ -29,9 +30,13 @@ class KategoriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Kategori $kategori)
     {
-        //
+        $parents = $kategori->whereNull('parent_id')->get();
+        $response = [
+            'parents' => $parents,
+        ];
+        return view('backend.kategori.create', $response);
     }
 
     /**
@@ -40,9 +45,12 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Kategori $kategori)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->nama);
+        $kategori->create($data);
+        return redirect()->back()->with('success','Berhasil');
     }
 
     /**
@@ -64,7 +72,12 @@ class KategoriController extends Controller
      */
     public function edit(Kategori $kategori)
     {
-        //
+        $parents = $kategori->whereNull('parent_id')->where('id','!=',$kategori->id)->get();
+        $response = [
+            'parents' => $parents,
+            'kategori' => $kategori
+        ];
+        return view('backend.kategori.edit', $response);
     }
 
     /**
@@ -76,7 +89,12 @@ class KategoriController extends Controller
      */
     public function update(Request $request, Kategori $kategori)
     {
-        //
+        $data = $request->all();
+        if ($kategori->nama != $request->nama) {
+            $data['slug'] = Str::slug($request->nama);
+        }
+        $kategori->update($data);
+        return redirect()->back()->with('success','Berhasil');
     }
 
     /**
@@ -87,6 +105,7 @@ class KategoriController extends Controller
      */
     public function destroy(Kategori $kategori)
     {
-        //
+        $kategori->delete();
+        return redirect()->back()->with('success','Berhasil');
     }
 }

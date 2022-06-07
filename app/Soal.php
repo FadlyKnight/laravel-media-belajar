@@ -12,7 +12,7 @@ class Soal extends Model
 
     protected $guarded = [];
     protected $fillable = [
-        "materi_id","guru_id","gambar", "pertanyaan",
+        "materi_id", "guru_id", "gambar", "pertanyaan",
         "kunci", "opsi_a", "opsi_b",
         "opsi_c", "opsi_d",
     ];
