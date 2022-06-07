@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
+use App\Materi;
 use App\Soal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SoalController extends Controller
 {
@@ -31,7 +34,10 @@ class SoalController extends Controller
      */
     public function create()
     {
-        //
+        $response = [
+            'materis' => Materi::all(),
+        ];
+        return view('backend.soal.create', $response);
     }
 
     /**
@@ -40,9 +46,15 @@ class SoalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Helper $helper)
     {
-        //
+        $setData = $request->all();
+        $setData['guru_id'] = auth()->id ?? '1';
+        if ($request->hasFile('gambar')) {
+            $setData['gambar'] = $helper->uploadFile($request->gambar, 'soal');
+        }
+        Soal::create($setData);
+        return redirect()->route('manage.soal.index')->with('success', 'Berhasil');
     }
 
     /**
@@ -64,7 +76,11 @@ class SoalController extends Controller
      */
     public function edit(Soal $soal)
     {
-        //
+        $response = [
+            'soal' => $soal,
+            'materis' => Materi::all(),
+        ];
+        return view('backend.soal.edit', $response);
     }
 
     /**
@@ -74,9 +90,15 @@ class SoalController extends Controller
      * @param  \App\Soal  $soal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Soal $soal)
+    public function update(Request $request, Soal $soal, Helper $helper)
     {
-        //
+        $setData = $request->all();
+        $setData['guru_id'] = auth()->id ?? '1';
+        if ($request->hasFile('gambar')) {
+            $setData['gambar'] = $helper->uploadFile($request->gambar, 'soal');
+        }
+        $soal->update($setData);
+        return redirect()->route('manage.soal.index')->with('success', 'Berhasil');
     }
 
     /**
