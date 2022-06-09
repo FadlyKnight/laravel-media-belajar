@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -30,8 +31,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {        
+        $response = [
+            'roles' => ['siswa','guru','admin'],
+        ];
+        return view('backend.user.create', $response);
     }
 
     /**
@@ -42,7 +46,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['password'] = Hash::make($request->password);
+        User::create($data);
+        return redirect()->route('manage.user.index')->with('success', 'Berhasil');
     }
 
     /**
@@ -59,34 +66,44 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $response = [
+            'user' => $user,
+            'roles' => ['siswa','guru','admin'],
+        ];
+        return view('backend.user.edit', $response);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $data = $request->all();
+        if ($request->has('password')) {
+            $data['password'] = Hash::make($request->password);
+        }
+        $user->update($data);
+        return redirect()->route('manage.user.index')->with('success', 'Berhasil');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('manage.user.index')->with('success', 'Berhasil');
     }
 }

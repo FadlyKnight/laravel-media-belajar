@@ -109,6 +109,7 @@ class SoalController extends Controller
      */
     public function destroy(Soal $soal)
     {
-        //
+        $soal->delete();
+        return redirect()->route('manage.soal.index')->with('success', 'Berhasil');
     }
 }
