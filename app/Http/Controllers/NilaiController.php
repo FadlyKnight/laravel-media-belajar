@@ -12,9 +12,16 @@ class NilaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Nilai $nilai)
+    {        
+        $head = $nilai->display_all;
+        $data = $nilai->select('*')->get();
+        unset($head[0]);
+        $response = [
+            'head' => $head,
+            'data' => $data,
+        ];
+        return view('backend.nilai.index', $response);
     }
 
     /**

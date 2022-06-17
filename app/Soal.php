@@ -29,39 +29,12 @@ class Soal extends Model
         "opsi_d" => ["string","required"],
     ];
 
-    // public $rulesForm = [
-    //     "materi_id" => [
-    //         "type" => "select",
-    //         "related" => "materi"
-    //     ],
-    //     "guru_id" => [
-    //         "type" => "select",
-    //         "related" => "guru"
-    //     ],
-    //     "gambar" => [
-    //         "type" => "file",
-    //     ],
-    //     "pertanyaan" => [
-    //         "type" => "textarea"
-    //     ],
-    //     "kunci" => [
-    //         ""
-    //     ],
-    //     "opsi_a" => [
-    //         ""
-    //     ],
-    //     "opsi_b" => [
-    //         ""
-    //     ],
-    //     "opsi_c" => [
-    //         ""
-    //     ],
-    //     "opsi_d" => [
-    //         ""
-    //     ],
-    // ];
     
     public $display_all = ['id','guru_id','pertanyaan','kunci'];
+    public $display_siswa = [
+        'id','materi_id','pertanyaan','gambar', 
+        'opsi_a','opsi_b','opsi_c','opsi_d',
+    ];
 
     public function guru(){
         return $this->belongsTo(User::class,'guru_id','id')->withDefault();

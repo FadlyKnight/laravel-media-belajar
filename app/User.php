@@ -45,12 +45,12 @@ class User extends Authenticatable
     }
     
     public function nilaiSiswa(){
-        return $this->hasOne(User::class,'siswa_id','id')->withDefault();
+        return $this->hasOne(Nilai::class,'siswa_id','id')->withDefault();
     }
     
-    public function guru(){
-        return $this->hasMany(User::class,'guru_id','id');
-    }
+    // public function guru(){
+    //     return $this->hasMany(User::class,'guru_id','id');
+    // }
     
 
 }

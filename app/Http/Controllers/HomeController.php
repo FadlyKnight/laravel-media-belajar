@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,21 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+        switch ($user->role) {
+            case 'siswa':
+                return redirect()->route('siswa.home');
+                break;
+            case 'guru':
+                return redirect()->route('manage.user.index');
+                break;
+            case 'admin':
+                return redirect()->route('manage.user.index');
+                break;
+            default:
+                abort(404,'INVALID ROLE');
+                break;
+        }
         return view('home');
     }
 }

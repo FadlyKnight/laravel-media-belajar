@@ -22,7 +22,7 @@
 
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="{{ asset('logo-light.png') }}" alt="user-image" class="rounded-circle">
+                            {{-- <img src="{{ asset('logo-light.png') }}" alt="user-image" class="rounded-circle"> --}}
                             <span class="pro-user-name ml-1">
                                 {{ auth()->user()->name ?? 'No Name' }} <i class="mdi mdi-chevron-down"></i> 
                             </span>
@@ -38,18 +38,6 @@
                                 <i class="fe-user"></i>
                                 <span>My Account</span>
                             </a>
-
-                            <!-- item-->
-                            {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-settings"></i>
-                                <span>Settings</span>
-                            </a> --}}
-
-                            <!-- item-->
-                            {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-lock"></i>
-                                <span>Lock Screen</span>
-                            </a> --}}
 
                             <div class="dropdown-divider"></div>
 
