@@ -21,6 +21,10 @@ class Kategori extends Model
         return $this->belongsTo(Kategori::class,'parent_id','id')->withDefault(['nama' => '-']);
     }
 
+    public function child(){
+        return $this->hasMany(Kategori::class,'parent_id','id');
+    }
+
     public function materi()
     {
         return $this->hasMany(Materi::class,'kategori_id','id');

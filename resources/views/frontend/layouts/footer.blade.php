@@ -1,90 +1,77 @@
+<footer id="footer" class="footer">
 
-<section id="footer">
-    <div class="container">
+    <div class="footer-content">
+      <div class="container">
         <div class="row">
-            <div class="col-12 text-center footer-content">
-                <ul class="footer-icon">
-                    <li class="footer_list"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li class="footer_list"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li class="footer_list"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li class="footer_list"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-                <p class="sub-heading footer_text text-black"><i class="far fa-copyright"></i>2020 MegaOne. Made with love by themeindustry</p>
 
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>HeroBiz</h3>
+              <p>
+                A108 Adam Street <br>
+                NY 535022, USA<br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
             </div>
-        </div>
-    </div>
-</section>
+          </div>
 
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
 
-<!--modal window-->
-<div class="modal fade model-reg" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <form class="appointment-form contact-form" id="modal-contact-form-data">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h1 class="font-weight-bold green-color form-tittle">Apply<span class="blue-color"> Now!</span></h1>
-                    <div class="col-12" id="quote_result"></div>
-                    <div class="form-group-1">
-                        <input type="text" name="userName" id="name" placeholder="Your Name" required />
-                        <input type="text" name="fatherName" placeholder="Father Name" required />
-                        <input type="email" name="userEmail" id="email" placeholder="Email" required />
-                        <input type="number" name="userPhone" id="phone_number" placeholder="Phone number" required />
-                        <input type="text" name="userAddress" id="title" placeholder="Address" required />
-                        <div class="select-list">
-                            <select name="course" id="course_type" class="la-angle-down">
-                                <option value="course">Course to Apply</option>
-                                <option value="society">Society</option>
-                                <option value="language">Language</option>
-                            </select>
-                        </div>
-                    </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
 
-                    <button type="submit" class="btn btn-large btn-primary contact-btn w-100 text-white modal_contact_btn" id="submit_btn"><i class="fa fa-spinner fa-spin mr-2 d-none" aria-hidden="true"></i><b>SUBMIT NOW</b></button>
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
 
-                </form>
-
-
-            </div>
+          </div>
 
         </div>
+      </div>
     </div>
-</div>
-<!--modal window end-->
 
-<!-- JavaScript -->
-<script src="{{ asset('front/vendor/js/bundle.min.js') }}"></script>
+    <div class="footer-legal text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
-<!-- Plugin Js -->
-<script src="{{ asset('front/vendor/js/jquery.fancybox.min.js') }}"></script>
-<script src="{{ asset('front/vendor/js/jquery.cubeportfolio.min.js') }}"></script>
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div class="copyright">
+            &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
 
-<!-- custom script -->
-<script src="{{ asset('front/js/mediaelement-and-player.min.js') }}"></script>
-<script src="{{ asset('front/js/wow.min.js') }}"></script>
-<script src="{{ asset('front/vendor/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('front/vendor/js/parallaxie.min.js') }}"></script>
-<script src="{{ asset('front/vendor/js/contact_us.js') }}"></script>
-<script src="{{ asset('front/js/script.js') }}"></script>
-<script>
-    // Prevent closing from click inside dropdown
-$(document).on('click', '.dropdown-menu', function (e) {
-  e.stopPropagation();
-});
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
 
-// make it as accordion for smaller screens
-if ($(window).width() < 992) {
-  $('.dropdown-menu a').click(function(e){
-    e.preventDefault();
-      if($(this).next('.submenu').length){
-        $(this).next('.submenu').toggle();
-      }
-      $('.dropdown').on('hide.bs.dropdown', function () {
-     $(this).find('.submenu').hide();
-  })
-  });
-}
-</script>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
