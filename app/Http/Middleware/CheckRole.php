@@ -18,7 +18,8 @@ class CheckRole
     {
         if (Auth::check()) {
             $myrole = Auth::user()->role; 
-            if ($role == $myrole) {
+            $role = explode('|',$role);
+            if ( in_array($myrole, $role)  ) {
                 return $next($request);
             }
             abort('403',' Tidak Ada Akses');

@@ -26,10 +26,10 @@ class RedirectIfAuthenticated
                     return redirect()->route('siswa.home');
                     break;
                 case 'guru':
-                    return redirect()->route('guru.home');
+                    return redirect()->route('manage.soal.index');
                     break;
                 case 'admin':
-                    return redirect()->route('admin.home');
+                    return redirect()->route('manage.soal.index');
                     break;
                 
                 default:

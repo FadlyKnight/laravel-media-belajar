@@ -1,6 +1,7 @@
 @extends('frontend.layouts.content')
 
 @section('content')
+  @include('frontend.layouts.slider')
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
       <div class="container">

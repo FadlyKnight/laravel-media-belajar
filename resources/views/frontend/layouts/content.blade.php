@@ -46,7 +46,6 @@
   <!-- ======= Header ======= -->
   @include('frontend.layouts.header')
 
-  @include('frontend.layouts.slider')
   <main id="main">
     @yield('content')
   </main>

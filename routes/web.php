@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'BerandaController@beranda')->name('home.beranda');
-Route::get('/materi', 'BerandaController@materi')->name('home.materi');
-Route::get('/soal', 'BerandaController@soal')->name('home.soal');
+Route::get('/materi/{kategori_id}', 'BerandaController@materi')->name('home.materi');
+Route::get('/materi-detail/{slug}', 'BerandaController@materiShow')->name('home.materi.slug');
+
+// Route::get('/soal', 'BerandaController@soal')->name('home.soal');
 
 Auth::routes();
 
@@ -24,7 +26,7 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::group([ 
     'prefix' => 'manage',
     'as' => 'manage.',
-    'middleware' => ['auth','role:guru,admin'] 
+    'middleware' => ['auth','role:guru|admin'] 
 ], function(){
     Route::resource('user','UserController');
     Route::resource('soal','SoalController');

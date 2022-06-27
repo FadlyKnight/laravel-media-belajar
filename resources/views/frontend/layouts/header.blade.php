@@ -15,7 +15,7 @@
         <ul>
 
           <li><a class="nav-link scrollto" href="{{ route('home.beranda') }}">Beranda</a></li>
-          <li><a class="nav-link scrollto" href="{{ route('home.soal') }}">Soal</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('siswa.soal.show') }}">Soal</a></li>
           <li class="dropdown"><a href="#"><span>Materi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>              
               @foreach ($parent_kat as $item)
