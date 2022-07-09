@@ -43,6 +43,16 @@
                         data-default-file="{{ asset($materi->gambar) }}"
                         >
             </div>
+            <div class="form-group">
+                <label for="video"></label>
+                <input type="file" class="form-control dropify"
+                        name="video"
+                        id="video"
+                        aria-describedby="helpId"
+                        placeholder="video" 
+                        data-default-file="{{ asset($materi->video) }}"
+                        >
+            </div>
         </div>
 
         <div class="col-12">

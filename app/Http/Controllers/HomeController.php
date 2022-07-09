@@ -30,10 +30,10 @@ class HomeController extends Controller
                 return redirect()->route('siswa.home');
                 break;
             case 'guru':
-                return redirect()->route('manage.user.index');
+                return redirect()->route('manage.dashboard');
                 break;
             case 'admin':
-                return redirect()->route('manage.user.index');
+                return redirect()->route('manage.dashboard');
                 break;
             default:
                 abort(404,'INVALID ROLE');

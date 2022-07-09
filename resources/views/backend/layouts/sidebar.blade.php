@@ -13,13 +13,15 @@
                         <p class="text-muted">{{ strtoupper(auth()->user()->role) ?? 'Tidak Ada' }}</p>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="#" class="text-muted">
-                                    <i class="mdi mdi-18px mdi-cog"></i>
+                                <a href="{{ url('/') }}" class="text-muted">
+                                    <i class="mdi mdi-18px mdi-home"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="#"
+                                onclick="logout()"
+                                >
                                     <i class="mdi mdi-18px mdi-power"></i>
                                 </a>
                             </li>
@@ -35,7 +37,7 @@
                             @if (auth()->user()->role == 'admin' || auth()->user()->role == 'guru')
 
                                 <li>
-                                    <a href="home" class="{{ \Route::is('admin.home') ? 'active' : '' }}" >
+                                    <a href="{{ route('manage.dashboard') }}" class="{{ \Route::is('manage.dashboard') ? 'active' : '' }}" >
                                         <i class="mdi mdi-18px mdi-view-dashboard"></i>
                                         <span> Dashboard </span>
                                     </a>
@@ -122,4 +124,11 @@
                 <!-- Sidebar -left -->
 
             </div>
+            <script>
+                function logout(){
+                    if (confirm('Apakah anda ingin logout ?')) {                 
+                        document.getElementById('logout-form').submit();   
+                    }
+                }
+            </script>
             <!-- Left Sidebar End -->

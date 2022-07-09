@@ -14,6 +14,7 @@ class Materi extends Model
         'judul',
         'konten',
         'gambar',
+        'video',
     ];
 
     public $display_all = ['id','guru_id','kategori_id','judul'];

@@ -37,6 +37,10 @@
                 <label for="gambar"></label>
                 <input type="file" class="form-control dropify" name="gambar" id="gambar" aria-describedby="helpId" placeholder="gambar">
             </div>
+            <div class="form-group">
+                <label for="video">Video</label>
+                <input type="file" class="form-control dropify" name="video" id="video" accept=".mp4,3gp,.mkv" aria-describedby="helpId" placeholder="video">
+            </div>
         </div>
 
         <div class="col-12">

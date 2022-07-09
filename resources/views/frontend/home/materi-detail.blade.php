@@ -31,6 +31,15 @@
                   <img src="{{ asset($materi->gambar) }}" alt="" class="img-fluid" style="max-height: 500px">
                 </div>
   
+                @if ($materi->video != NULL)
+                  <div class="w-100 my-3 mx-auto" style="max-width: 600px;">
+                    <video controls class="w-100">
+                      <source src="{{ asset($materi->video) }}" type="video/mp4">
+                      Your browser does not support HTML video.
+                    </video>
+                  </div>
+                @endif
+
                 <h2 class="title">{{ $materi->judul }}</h2>
   
                 <div class="meta-top">
@@ -40,7 +49,6 @@
                     {{-- <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{{ route('home.materi.slug', $materi->slug) }}">12 Comments</a></li> --}}
                   </ul>
                 </div><!-- End meta top -->
-  
                 <div class="content">
                     {!! $materi->konten !!}
                 </div><!-- End meta bottom -->

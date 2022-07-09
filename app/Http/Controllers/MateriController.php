@@ -58,6 +58,9 @@ class MateriController extends Controller
         if ($request->hasFile('gambar')) {
             $setData['gambar'] = $helper->uploadFile($request->gambar, 'upload');
         }
+        if ($request->hasFile('video')) {
+            $setData['video'] = $helper->uploadFile($request->video, 'video');
+        }
         Materi::create($setData);
         return redirect()->route('manage.materi.index')->with('success', 'Berhasil');
     }
@@ -112,6 +115,11 @@ class MateriController extends Controller
             $setData['gambar'] = $helper->uploadFile($request->gambar, 'upload');
             $helper->deleteFile($materi->gambar);
         }
+        
+        if ($request->hasFile('video')) {
+            $setData['video'] = $helper->uploadFile($request->video, 'video');
+            $helper->deleteFile($materi->video);
+        }
 
         $materi->update($setData);
         return redirect()->route('manage.materi.index')->with('success', 'Berhasil');
@@ -125,6 +133,9 @@ class MateriController extends Controller
      */
     public function destroy(Materi $materi)
     {
+        $helper = new Helper;
+        $helper->deleteFile($materi->gambar);
+        $helper->deleteFile($materi->video);
         $materi->delete();
         return redirect()->route('manage.materi.index')->with('success', 'Berhasil');
     }

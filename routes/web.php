@@ -28,7 +28,8 @@ Route::group([
     'as' => 'manage.',
     'middleware' => ['auth','role:guru|admin'] 
 ], function(){
-    Route::resource('user','UserController');
+    Route::resource('user','UserController')->middleware(['role:admin']);
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('soal','SoalController');
     Route::resource('nilai','NilaiController');
     Route::resource('jawaban','JawabanController');
