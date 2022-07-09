@@ -16,35 +16,47 @@
     <div style="height: 20px;"></div>
     <form action="" method="post">
         @csrf
-    @foreach ($soals as $soal)
-        <strong>{{ $loop->iteration.')' }}</strong>
-        @if ($soal->gambar != Null)
-            <div>
-                <img src="{{ asset('soal/'.$soal->gambar) }}" class="img-fluid" style="max-width: 200px" alt="">
-            </div>
-        @endif
-        <p>{!! $soal->pertanyaan !!}</p>     
-        <fieldset id="group2">
-            <div class="d-flex mb-2">
-                <input type="radio" value="opsi_a" name="jawab_{{ $soal->id }}" id="jawab_opsi_a_{{ $soal->id }}" > 
-                <label class="font-weight-light" for="jawab_opsi_a_{{ $soal->id }}">A. {{$soal->opsi_a}}</label>
-            </div>
-            <div class="d-flex mb-2">
-                <input type="radio" value="opsi_b" name="jawab_{{ $soal->id }}" id="jawab_opsi_b_{{ $soal->id }}" > 
-                <label class="font-weight-light" for="jawab_opsi_b_{{ $soal->id }}">B. {{$soal->opsi_b}}</label>
-            </div>
-            <div class="d-flex mb-2">
-                <input type="radio" value="opsi_c" name="jawab_{{ $soal->id }}" id="jawab_opsi_c_{{ $soal->id }}" > 
-                <label class="font-weight-light" for="jawab_opsi_c_{{ $soal->id }}">C. {{$soal->opsi_c}}</label>
-            </div>
-            <div class="d-flex mb-2">
-                <input type="radio" value="opsi_d" name="jawab_{{ $soal->id }}" id="jawab_opsi_d_{{ $soal->id }}" > 
-                <label class="font-weight-light" for="jawab_opsi_d_{{ $soal->id }}">D. {{$soal->opsi_d}}</label>
-            </div>
-        </fieldset>
-        <hr> 
-    @endforeach
-
+        @php
+            $no = 1;
+        @endphp
+        @foreach ($materis as $materi)
+            <h4> {{ $materi->judul }} </h4>
+            <hr style="border: 0;border-top: 1px solid #010101;">
+            @php
+                $soals = $materi->soal->toJson();
+                $soals = json_decode($soals);
+                shuffle($soals); // SHUFFLE THE ARRAY
+                // dd($soals);
+            @endphp
+            @foreach ($soals as $soal)
+                <strong>{{ $no++.')' }}</strong>
+                @if ($soal->gambar != Null)
+                    <div>
+                        <img src="{{ asset('soal/'.$soal->gambar) }}" class="img-fluid" style="max-width: 200px" alt="">
+                    </div>
+                @endif
+                <p>{!! $soal->pertanyaan !!}</p>     
+                <fieldset id="group2">
+                    <div class="d-flex mb-2">
+                        <input type="radio" value="opsi_a"  name="jawab_{{ $soal->id }}" id="jawab_opsi_a_{{ $soal->id }}" > 
+                        <label class="font-weight-light {{ $soal->kunci == 'opsi_a' ? 'text-danger' : '' }} " for="jawab_opsi_a_{{ $soal->id }}">A. {{$soal->opsi_a}}</label>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <input type="radio" value="opsi_b"  name="jawab_{{ $soal->id }}" id="jawab_opsi_b_{{ $soal->id }}" > 
+                        <label class="font-weight-light {{ $soal->kunci == 'opsi_b' ? 'text-danger' : '' }} " for="jawab_opsi_b_{{ $soal->id }}">B. {{$soal->opsi_b}}</label>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <input type="radio" value="opsi_c"  name="jawab_{{ $soal->id }}" id="jawab_opsi_c_{{ $soal->id }}" > 
+                        <label class="font-weight-light {{ $soal->kunci == 'opsi_c' ? 'text-danger' : '' }} " for="jawab_opsi_c_{{ $soal->id }}">C. {{$soal->opsi_c}}</label>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <input type="radio" value="opsi_d"  name="jawab_{{ $soal->id }}" id="jawab_opsi_d_{{ $soal->id }}" > 
+                        <label class="font-weight-light {{ $soal->kunci == 'opsi_d' ? 'text-danger' : '' }} " for="jawab_opsi_d_{{ $soal->id }}">D. {{$soal->opsi_d}}</label>
+                    </div>
+                </fieldset>
+                <hr> 
+            @endforeach            
+        @endforeach
     <div class="col-md-12 text-right">
         <button type="submit" class="btn btn-primary" onclick="return confirm('Apakah anda Yakin ?')">Submit Jawaban</button>
     </div>

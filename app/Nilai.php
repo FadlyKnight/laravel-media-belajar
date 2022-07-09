@@ -22,8 +22,8 @@ class Nilai extends Model
         return $this->belongsTo(User::class,'siswa_id','id')->withDefault();
     }
     
-    public function guru(){
-        return $this->belongsTo(User::class,'guru_id','id')->withDefault();
-    }
+    // public function guru(){
+    //     return $this->belongsTo(User::class,'guru_id','id')->withDefault();
+    // }
     
 }

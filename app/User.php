@@ -45,7 +45,8 @@ class User extends Authenticatable
     }
     
     public function nilaiSiswa(){
-        return $this->hasOne(Nilai::class,'siswa_id','id')->withDefault();
+        return $this->hasMany(Nilai::class,'siswa_id','id');
+        // ->withDefault();
     }
     
     // public function guru(){

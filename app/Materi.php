@@ -26,4 +26,8 @@ class Materi extends Model
         return $this->belongsTo(Kategori::class,'kategori_id','id')->withDefault();
     }
 
+    public function soal(){
+        return $this->hasMany(Soal::class,'materi_id','id');
+    }
+
 }

@@ -41,7 +41,7 @@ class Soal extends Model
     }
     
     public function materi(){
-        return $this->belongsTo(User::class,'guru_id','id')->withDefault();
+        return $this->belongsTo(Materi::class,'materi_id','id')->withDefault();
     }
     
 

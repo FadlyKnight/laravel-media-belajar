@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Materi;
 use App\Nilai;
 use App\Soal;
 use Illuminate\Http\Request;
@@ -11,25 +12,15 @@ class SiswaController extends Controller
     public function home(){
         $nilai = auth()->user()->nilaiSiswa;
         $response = [
-            'sudah_jawab' => $nilai->total_nilai != NULL,
-            'total_nilai' => $nilai->total_nilai ?? 0,
-            'total_benar' => $nilai->total_benar ?? 0,
-            'total_salah' => $nilai->total_salah ?? 0,
-            'total_tidak_jawab' => $nilai->total_tidak_jawab ?? 0,
-            'total_soal' => $nilai->total_benar + $nilai->total_salah + $nilai->total_tidak_jawab,
+            'nilais' => $nilai,
             'users' => auth()->user()
         ];
         return view('backend.siswa.profile', $response);
     }
-    public function soalShow(Soal $soal){
-        $nilai = auth()->user()->nilaiSiswa;
-        if ($nilai->total_nilai != NULL) {
-            return redirect()->back()->with('success','Anda Sudah Mengerjakan Soal');
-        }
-
-        $soals = $soal->select($soal->display_siswa)->with('materi')->get();
+    public function soalShow(){
+        // $soals = $soal->select($soal->display_siswa)->with('materi')->get();
         $response = [
-            'soals' => $soals
+            'materis' => Materi::select('judul','id')->whereHas('soal')->with('soal')->get(),
         ];
         return view('backend.siswa.soal', $response);
     }
@@ -70,9 +61,7 @@ class SiswaController extends Controller
         $tidak_jawab = count($tidak_jawab);
         $nilai = ($benar * 10);
 
-        Nilai::updateOrCreate([
-            'siswa_id' => auth()->user()->id,
-        ],[
+        Nilai::create([
             'siswa_id' => auth()->user()->id,
             'total_nilai' => $nilai,
             'total_benar' => $benar,
