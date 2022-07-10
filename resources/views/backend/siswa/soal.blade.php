@@ -39,19 +39,19 @@
                 <fieldset id="group2">
                     <div class="d-flex mb-2">
                         <input type="radio" value="opsi_a"  name="jawab_{{ $soal->id }}" id="jawab_opsi_a_{{ $soal->id }}" > 
-                        <label class="font-weight-light {{ $soal->kunci == 'opsi_a' ? 'text-danger' : '' }} " for="jawab_opsi_a_{{ $soal->id }}">A. {{$soal->opsi_a}}</label>
+                        <label class="font-weight-light" for="jawab_opsi_a_{{ $soal->id }}">A. {{$soal->opsi_a}}</label>
                     </div>
                     <div class="d-flex mb-2">
                         <input type="radio" value="opsi_b"  name="jawab_{{ $soal->id }}" id="jawab_opsi_b_{{ $soal->id }}" > 
-                        <label class="font-weight-light {{ $soal->kunci == 'opsi_b' ? 'text-danger' : '' }} " for="jawab_opsi_b_{{ $soal->id }}">B. {{$soal->opsi_b}}</label>
+                        <label class="font-weight-light" for="jawab_opsi_b_{{ $soal->id }}">B. {{$soal->opsi_b}}</label>
                     </div>
                     <div class="d-flex mb-2">
                         <input type="radio" value="opsi_c"  name="jawab_{{ $soal->id }}" id="jawab_opsi_c_{{ $soal->id }}" > 
-                        <label class="font-weight-light {{ $soal->kunci == 'opsi_c' ? 'text-danger' : '' }} " for="jawab_opsi_c_{{ $soal->id }}">C. {{$soal->opsi_c}}</label>
+                        <label class="font-weight-light" for="jawab_opsi_c_{{ $soal->id }}">C. {{$soal->opsi_c}}</label>
                     </div>
                     <div class="d-flex mb-2">
                         <input type="radio" value="opsi_d"  name="jawab_{{ $soal->id }}" id="jawab_opsi_d_{{ $soal->id }}" > 
-                        <label class="font-weight-light {{ $soal->kunci == 'opsi_d' ? 'text-danger' : '' }} " for="jawab_opsi_d_{{ $soal->id }}">D. {{$soal->opsi_d}}</label>
+                        <label class="font-weight-light" for="jawab_opsi_d_{{ $soal->id }}">D. {{$soal->opsi_d}}</label>
                     </div>
                 </fieldset>
                 <hr> 
