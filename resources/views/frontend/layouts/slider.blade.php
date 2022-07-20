@@ -10,9 +10,10 @@
           </div>
 
           <div class="col-lg-9 text-center">
-            <h2>Welcome to HeroBiz</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="#featured-services" class="btn-get-started scrollto ">Get Started</a>
+            <h2>PEMBELAJARAN TEMATIK TERPADU KELAS VI</h2>
+            <p>Kurikulum 2013</p>
+            <p>
+            Kurikulum 2013 adalah kurikulum berbasis kompetensi. Di dalamnya dirumuskan secara terpadu kompetensi sikap, pengetahuan, dan keterampilan yang harus dikuasai siswa. Selain itu juga dirumuskan proses pembelajaran dan penilaian yang diperlukan siswa untuk mencapai kompetensi yang diinginkan. Buku yang ditulis mengacu pada kurikulum 2013 ini dirancang dengan menggunakan proses pembelajaran yang sesuai untuk mencapai kompetensi yang sesuai dan diukur dengan proses penilaian yang sesuai.</p>
           </div>
 
         </div>
@@ -28,9 +29,7 @@
           </div>
 
           <div class="col-lg-9 text-center">
-            <h2>At vero eos et accusamus</h2>
-            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
-            <a href="#featured-services" class="btn-get-started scrollto ">Get Started</a>
+            <p>lulusan SD/MI adalah kemampuan pikir dan tindak yang produktif dan kreatif dalam ranah abstrak dan konkret. Kemampuan lain yang diharapkan dalam kompetensi inti, salah satunya adalah kemampuan untuk menyajikan pengetahuan dalam bahasa yang jelas, logis dan sistematis, dalam karya yang estetis, atau dalam tindakan yang mencerminkan perilaku anak sehat, beriman, dan berakhlak mulia. Kompetensi itu dirancang untuk dicapai melalui proses pembelajaran berbasis penemuan (discovery learning) melalui kegiatan-kegiatan berbentuk tugas (project based learning), dan penyelesaiaan masalah (problem solving based learning) yang mencakup proses mengamati, menanya, mengumpulkan informasi, mengasosiasi, dan mengomunikasikan.</p>
           </div>
 
         </div>
@@ -46,9 +45,7 @@
           </div>
 
           <div class="col-lg-9 text-center">
-            <h2>Temporibus autem quibusdam</h2>
-            <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
-            <a href="#featured-services" class="btn-get-started scrollto ">Get Started</a>
+            <p>Kelas VI SD/MI ini disusun berdasarkan konsep itu. Sebagaimana lazimnya pelajaran yang mengacu pada kurikulum berbasis kompetensi,pembelajaran berbasis aktivitas dan urutan pembelajaran yang dinyatakan dalam kegiatan-kegiatan yang harus dilakukan siswa. Pembelajaran ini juga mengarahkan hal-hal yang harus dilakukan siswa bersama guru dan teman sekelasnya untuk mencapai kompetensi tertentu. Pencapaian kompetensi terpadu menuntut pendekatan pembelajaran tematik terpadu, yaitu mempelajari semua mata pelajaran secara terpadu melalui tema-tema kehidupan yang dijumpai siswa sehari-hari. Siswa diajak mengikuti proses pembelajaran transdisipliner yang menempatkan kompetensi yang dibelajarkan dikaitkan dengan konteks siswa dan lingkungan.</p>
           </div>
 
         </div>
